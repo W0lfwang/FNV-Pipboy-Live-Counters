@@ -1,0 +1,7 @@
+scn PLCvar
+
+int iFrameMode
+; 0 scale
+; 1 Move
+; 2 In Z
+; 3 Rotate

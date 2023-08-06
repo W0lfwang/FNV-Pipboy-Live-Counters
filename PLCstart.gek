@@ -1,0 +1,23 @@
+scn PLCstart
+
+;===Games First Loads===
+
+Begin menumode 4
+if GetGameRestarted
+
+	SetEventHandler "OnKeyDown:82" PLCkey0 ;  Num0
+	SetEventHandler "OnKeyDown:80" PLCkey2 ;  Num2
+	SetEventHandler "OnKeyDown:75" PLCkey4 ;  Num4
+	SetEventHandler "OnKeyDown:76" PLCkey5 ;  Num5
+	SetEventHandler "OnKeyDown:77" PLCkey6 ;  Num6
+	SetEventHandler "OnKeyDown:72" PLCkey8 ;  Num8
+	print "PLC Test module started"
+
+endif
+end
+
+;===Stop Quest===
+Begin Gamemode
+	StopQuest PLCqstStart
+	print "PLC atarting quest killed"
+end
