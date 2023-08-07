@@ -1,1 +1,19 @@
 scn PLCkey0
+
+int ikey
+
+Begin Function {ikey}
+
+; PrintDebug "key " + $ikey + " pressed"
+
+if GetDBMode == 0
+    SetDebugMode 1
+    Console "tdt"
+    PrintDebug "PLC Debug mode enabled"
+else
+    PrintDebug "PLC debug mode finished"
+    SetDebugMode 0
+    Console "tdt"
+endif
+
+end

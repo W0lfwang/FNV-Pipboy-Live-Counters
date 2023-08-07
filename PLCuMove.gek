@@ -1,0 +1,20 @@
+scn PLCuMove
+
+int imode
+float fnum
+float fx
+float fy
+float fz
+array_var av_store
+
+Begin Function {imode, fnum}
+
+av_store = player.GetNifBlockTranslation "StatsFrame"
+av_store[imode] = fnum
+fx = av_store[0]
+fy = av_store[1]
+fz = av_store[2]
+
+player.SetNifBlockTranslation "StatsFrame" fx fy fz
+
+end

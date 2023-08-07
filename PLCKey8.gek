@@ -1,1 +1,17 @@
 scn PLCKey8
+
+int ikey
+float fnum
+
+Begin Function {ikey}
+
+; PrintDebug "key " + $ikey + " pressed"
+
+if ModelHasBlock PlayerRef "StatsFrame"
+
+    fnum = (player.GetNifBlockScale "StatsFrame") +0.01
+    call PLCuScale fnum
+
+endif
+
+end

@@ -1,1 +1,34 @@
 scn PLCKey2
+
+int ikey
+float fnum
+array_var av_store
+
+Begin Function {ikey}
+
+; PrintDebug "key " + $ikey + " pressed"
+
+if ModelHasBlock PlayerRef "StatsFrame"
+
+    if PLC.iFRmode == 0
+        ; --- Scale ---
+        fnum = (player.GetNifBlockScale "StatsFrame") -0.01
+        call PLCuScale fnum
+
+    elseif PLC.iFRmode == 1
+        ; --- Move ---
+        av_store = player.GetNifBlockTranslation "StatsFrame"  ; Save the Position        
+        fnum = av_store[1] -1  ; extract Y value
+        call PLCuMove 1 fnum
+
+    elseif PLC.iFRmode == 2
+        ; --- Z axis ---
+
+    elseif PLC.iFRmode == 3
+        ; --- Rotate ---
+
+    endif
+
+endif
+
+end

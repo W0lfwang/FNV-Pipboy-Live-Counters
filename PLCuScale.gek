@@ -1,0 +1,9 @@
+scn PLCuScale
+
+float fnum
+
+Begin Function {fnum}
+
+player.SetNifBlockScale "StatsFrame" fnum
+
+end

@@ -1,1 +1,9 @@
 scn PLCKey4
+
+int ikey
+
+Begin Function {ikey}
+
+; PrintDebug "key " + $ikey + " pressed"
+
+end

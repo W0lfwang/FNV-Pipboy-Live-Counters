@@ -1,0 +1,9 @@
+scn PLCuRotate
+
+int imode
+float fnum
+array_var av_store
+
+Begin Function {imode, fnum}
+
+end

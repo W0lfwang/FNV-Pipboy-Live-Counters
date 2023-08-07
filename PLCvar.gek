@@ -1,7 +1,15 @@
 scn PLCvar
 
-int iFrameMode
-; 0 scale
-; 1 Move
-; 2 In Z
-; 3 Rotate
+array_var av_fmode
+int iFRmode
+
+Begin Gamemode
+
+    ; Set default value for variables
+    av_fmode = Ar_list "Scale" "Move" "Z axis" "Rotate"
+
+    ; stop the quest so this script runs only once
+	StopQuest PLC
+	print "PLC Quest killed"
+
+end

@@ -1,1 +1,33 @@
 scn PLCKey5
+
+int ikey
+float ftop
+
+Begin Function {ikey}
+
+; PrintDebug "key " + $ikey + " pressed"
+
+    ; We see if the frame was already given, if not, we give it
+    ; ---
+    if ModelHasBlock PlayerRef "StatsFrame"
+        ; Set top value for reset
+        ftop = (Ar_Size PLC.av_fmode) - 1
+        
+        ;Mode change
+        if PLC.iFRmode == ftop
+            PLC.iFRmode = 0
+        else
+            PLC.iFRmode += 1
+        endif
+
+        ;print result
+        printdebug "Frame Mode: " + $PLC.av_fmode[PLC.iFRmode]
+
+    else
+        ; We attatche the counter
+        PrintDebug "Attatch mesh"
+        AttachModel PlayerRef 3 "Bip01 L Forearm|W0lf\counter.nif"
+
+    endif
+
+end

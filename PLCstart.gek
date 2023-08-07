@@ -1,10 +1,15 @@
 scn PLCstart
 
 ;===Games First Loads===
+; 0 scale
+; 1 Move
+; 2 In Z
+; 3 Rotate
 
 Begin menumode 4
 if GetGameRestarted
 
+    ; Set functions to keys
 	SetEventHandler "OnKeyDown:82" PLCkey0 ;  Num0
 	SetEventHandler "OnKeyDown:80" PLCkey2 ;  Num2
 	SetEventHandler "OnKeyDown:75" PLCkey4 ;  Num4
@@ -19,5 +24,5 @@ end
 ;===Stop Quest===
 Begin Gamemode
 	StopQuest PLCqstStart
-	print "PLC atarting quest killed"
+	print "PLC starting quest killed"
 end
